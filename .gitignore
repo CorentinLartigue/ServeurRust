@@ -1,0 +1,3 @@
+# Ignore le répertoire de build de Cargo
+/target/
+.idea/
