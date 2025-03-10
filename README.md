@@ -10,22 +10,25 @@ Avant de pouvoir lancer ce projet, assurez-vous d'avoir les éléments suivants 
 - **Rust** : Si vous n'avez pas encore installé Rust, vous pouvez le télécharger et l'installer à partir de [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install).
 - **Visual Studio ou Build Tools pour Windows** (si vous utilisez Windows) :
       Pour pouvoir compiler le projet sous Windows, vous devez installer **Visual Studio** ou les **Build Tools** avec le support C++ et le SDK Windows.
-      Plus d'informations ici : [Installer Visual Studio](https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/).
+      Plus d'informations ici : [Installation](https://visualstudio.microsoft.com/fr/visual-cpp-build-tools/).
 
 ## Installation
 
 1. Clonez le repository du projet :
    ```bash
-   git clone [https://github.com/CorentinLartigue/ServeurRust.git](https://github.com/CorentinLartigue/ServeurRust.git)
-
+      git clone https://github.com/CorentinLartigue/ServeurRust.git
+   ```
+   
 2. Se déplacer dans le dossier du projet :
    ```bash
-   cd ServeurRust
-
+      cd ServeurRust
+   ```
+   
 3. Installez les dépendances (si nécessaire) :
    ```bash
-    cargo build
-
+      cargo build
+   ```
+   
 ## Configuration du port d'écoute
 
 Le serveur écoute sur le port spécifié dans la variable d'environnement PING_LISTEN_PORT. Si cette variable n'est pas définie, le port par défaut est 8080.
@@ -36,8 +39,8 @@ Si vous souhaitez changer le port, vous pouvez définir la variable d'environnem
 
 Pour démarrer le serveur, exécutez la commande suivante dans le terminal:
   ```bash
-  cargo run
-```
+      cargo run
+  ```
 Le serveur affichera un message indiquant qu'il est démarré et qu'il écoute à l'adresse 127.0.0.1:8080.
 
 ## Fonctionnement du serveur
