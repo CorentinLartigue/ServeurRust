@@ -1,0 +1,31 @@
+FROM rust:1.85.0 AS builder
+
+WORKDIR /tp_rush
+
+COPY Cargo.toml Cargo.lock ./
+
+RUN cargo fetch
+
+COPY src ./src
+
+RUN cargo build --release
+
+FROM debian:bookworm-slim
+
+WORKDIR /tp_rush
+
+RUN apt update && apt install -y curl
+
+RUN useradd -m test_user
+
+COPY --from=builder /tp_rush/target/release/rush_backend /tp_rush/rush_backend
+
+RUN chown -R test_user:test_user /tp_rush \
+    && chmod -R 770 /tp_rush
+
+
+USER test_user
+
+EXPOSE 8080
+
+CMD ["/tp_rush/rush_backend"]

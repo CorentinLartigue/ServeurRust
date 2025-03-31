@@ -3,5 +3,5 @@
 version = 4
 
 [[package]]
-name = "tp_rush"
+name = "rush_backend"
 version = "0.1.0"
